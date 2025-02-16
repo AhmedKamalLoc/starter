@@ -1,0 +1,57 @@
+import { Meta, Story } from '@storybook/blocks';
+
+import * as TabsStories from './tabs.stories';
+
+<Meta of={TabsStories} />
+
+# Tabs Component
+
+The `Tabs` component provides a flexible and customizable tab interface.
+
+## Usage
+
+```tsx
+import { Tabs } from '@starter/ui-core';
+
+const tabs = [
+  {
+    value: 'tab1',
+    label: 'Tab 1',
+    content: <div>Content for Tab 1</div>,
+  },
+  {
+    value: 'tab2',
+    label: 'Tab 2',
+    content: <div>Content for Tab 2</div>,
+  },
+];
+function MyComponent() {
+  return <Tabs tabs={tabs} />;
+}
+```
+
+## Props
+
+| Prop               | Type         | Description                      |
+| ------------------ | ------------ | -------------------------------- |
+| `tabs`             | `TabProps[]` | Array of tab objects             |
+| `listClassName`    | `string`     | Custom class for the TabsList    |
+| `triggerClassName` | `string`     | Custom class for the TabsTrigger |
+
+## Examples
+
+### Default Tabs
+
+<Story of={TabsStories.Default} />
+
+### Tabs with Custom Styles
+
+<Story of={TabsStories.WithCustomStyles} />
+
+### Fullwidth Tabs
+
+<Story of={TabsStories.FullwidthTabs} />
+
+### WithDirectionRTL Tabs
+
+<Story of={TabsStories.WithDirectionRTL} />
