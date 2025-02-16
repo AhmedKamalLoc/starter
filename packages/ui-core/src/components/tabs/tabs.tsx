@@ -1,13 +1,13 @@
 import { Tabs as ShadcnTabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-export type TabProps = {
+export type Tab = {
   value: string;
   label: React.ReactNode;
   content: React.ReactNode;
 };
 
 type TabsProps = {
-  tabs: TabProps[];
+  tabs: Tab[];
   listClassName?: string;
   triggerClassName?: string;
 } & React.ComponentProps<typeof ShadcnTabs>;

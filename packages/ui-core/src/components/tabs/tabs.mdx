@@ -8,6 +8,20 @@ import * as TabsStories from './tabs.stories';
 
 The `Tabs` component provides a flexible and customizable tab interface.
 
+## Props
+
+### `tabs`
+
+An array of `Tab` objects. Each `Tab` has the following shape:
+
+```typescript
+type Tab = {
+  value: string;
+  label: React.ReactNode;
+  content: React.ReactNode;
+};
+```
+
 ## Usage
 
 ```tsx

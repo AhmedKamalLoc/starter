@@ -10,6 +10,16 @@ const meta: Meta<typeof Tabs> = {
     tabs: {
       control: 'object',
       description: 'Array of tab objects with value, label, and content',
+      table: {
+        type: {
+          summary: 'Tab[]',
+          detail: `{
+  value: string;
+  label: React.ReactNode;
+  content: React.ReactNode;
+}`,
+        },
+      },
     },
     listClassName: {
       control: 'text',
