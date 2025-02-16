@@ -1,0 +1,24 @@
+# Default .prettierignore for Turborepo
+**/node_modules
+**/dist
+**/build
+**/.next
+**/.turbo
+**/coverage
+**/public
+**/pnpm-lock.yaml
+**/*.min.*
+**/LICENSE
+**/CHANGELOG.md
+**/yarn.lock
+**/__snapshots__
+
+# Custom additions
+*.log
+*.svg
+*.eot
+*.ttf
+*.woff
+*.woff2
+.DS_Store
+.env*.local
