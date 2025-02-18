@@ -271,6 +271,9 @@ importers:
       '@storybook/test':
         specifier: ^8.5.6
         version: 8.5.6(storybook@8.5.6(prettier@3.5.1))
+      '@storybook/types':
+        specifier: 8.5.6
+        version: 8.5.6(storybook@8.5.6(prettier@3.5.1))
       '@tailwindcss/vite':
         specifier: ^4.0.6
         version: 4.0.6(vite@6.1.0(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1))
@@ -1651,6 +1654,11 @@ packages:
 
   '@storybook/theming@8.5.6':
     resolution: {integrity: sha512-WX0NjPn6sao56OCSm3NVPqBjFhLhMLPjjDwC4fHCW25HZgI+u7oByNk/7YHcxpBYtoHSWMKMiCjOSJuW6731+A==}
+    peerDependencies:
+      storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
+
+  '@storybook/types@8.5.6':
+    resolution: {integrity: sha512-6int2DZ0BtokbG25ubHofw2YMA9255hVdzI58/hUyNMWYNBozafChiy6/i2nk/0AjRvWfRSm2WyvBetq0zKGUQ==}
     peerDependencies:
       storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
 
@@ -5987,6 +5995,10 @@ snapshots:
       storybook: 8.5.6(prettier@3.5.1)
 
   '@storybook/theming@8.5.6(storybook@8.5.6(prettier@3.5.1))':
+    dependencies:
+      storybook: 8.5.6(prettier@3.5.1)
+
+  '@storybook/types@8.5.6(storybook@8.5.6(prettier@3.5.1))':
     dependencies:
       storybook: 8.5.6(prettier@3.5.1)
 

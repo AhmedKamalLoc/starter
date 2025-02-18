@@ -1,0 +1,64 @@
+import { Meta, Story } from '@storybook/blocks';
+
+import * as stories from './action-dialog.stories';
+
+<Meta of={stories} />
+
+# ActionDialog
+
+The ActionDialog component is a customizable dialog used for confirmation actions, typically
+destructive operations like deletion.
+
+## Usage
+
+```TypeScript
+import { ActionDialog } from '@/components/action-dialog/action-dialog';
+```
+
+## Examples
+
+### Basic Usage
+
+<Story of={stories.Default} />
+
+### With Custom Content
+
+You can add additional content to the dialog by using the `content` prop.
+
+<Story of={stories.WithCustomContent} />
+
+### With Custom Icon
+
+The dialog icon can be customized using the `icon` prop.
+
+<Story of={stories.WithCustomIcon} />
+
+### With Custom Trigger Button
+
+You can provide a custom trigger button using the `openDialogButton` prop.
+
+<Story of={stories.WithCustomTriggerButton} />
+
+### With Long Content
+
+The dialog handles long content and descriptions gracefully.
+
+<Story of={stories.WithLongContent} />
+
+## Props
+
+| Prop             | Type                    | Description                                   |
+| ---------------- | ----------------------- | --------------------------------------------- |
+| title            | string                  | The title of the dialog                       |
+| description      | string                  | The description text                          |
+| cancelButtonText | string                  | Text for the cancel button                    |
+| action           | React.ReactNode         | The action button/content                     |
+| icon             | React.ReactNode         | Icon displayed in the dialog (default: Trash) |
+| children         | React.ReactNode         | content to display                            |
+| isOpen           | boolean                 | Controls the open state of the dialog         |
+| onOpenChange     | (open: boolean) => void | Callback when open state changes              |
+| onCancel         | () => void              | Callback when dialog is cancelled             |
+| trigger          | React.ReactNode         | Custom trigger button component               |
+| footerClassName  | string                  | Custom class for the footer                   |
+| separator        | React.ReactNode         | separator for the footer                      |
+| ref              | RefObject               | ref for the content container                 |

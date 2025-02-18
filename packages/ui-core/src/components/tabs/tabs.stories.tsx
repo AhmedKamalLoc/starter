@@ -30,6 +30,9 @@ const meta: Meta<typeof Tabs> = {
       description: 'Custom class for the TabsTrigger',
     },
   },
+  parameters: {
+    layout: 'centered',
+  },
 };
 
 export default meta;

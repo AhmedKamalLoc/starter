@@ -39,6 +39,84 @@
   --sidebar-border: hsl(220 13% 91%);
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
   --shadow: hsla(220, 43%, 11%, 0.05);
+
+  /* Base colors */
+  --white: hsl(0 0% 100%); /* #FFFFFF */
+  --black: hsl(0 0% 0%); /* #000000 */
+
+  /* Purple Scale */
+  --purple-25: hsl(300 100% 96%); /* #FFAFFF */
+  --purple-50: hsl(240 100% 98%); /* #F4F3FF */
+  --purple-100: hsl(240 100% 95%); /* #EBE9FE */
+  --purple-200: hsl(240 100% 91%); /* #DEDBFF */
+  --purple-300: hsl(240 100% 87%); /* #C7C2FF */
+  --purple-400: hsl(243 100% 79%); /* #9B8AFB */
+  --purple-500: hsl(245 89% 66%); /* #7A5AF8 */
+  --purple-600: hsl(256 85% 58%); /* #6938EF */
+  --purple-700: hsl(257 72% 50%); /* #5925DC */
+  --purple-800: hsl(256 85% 44%); /* #4A1FB8 */
+  --purple-900: hsl(256 85% 35%); /* #3E1C96 */
+  --purple-950: hsl(256 85% 26%); /* #2E1065 */
+
+  /* Gray Scale */
+  --gray-25: hsl(240 20% 99%); /* #FCFCFD */
+  --gray-100: hsl(216 24% 96%); /* #F9FAFB */
+  --gray-200: hsl(218 17% 91%); /* #E4E7EC */
+  --gray-300: hsl(217 16% 84%); /* #D0D5DD */
+  --gray-400: hsl(218 15% 65%); /* #98A2B3 */
+  --gray-500: hsl(221 13% 46%); /* #667085 */
+  --gray-600: hsl(216 18% 34%); /* #475467 */
+  --gray-700: hsl(217 24% 27%); /* #344054 */
+  --gray-800: hsl(215 33% 14%); /* #1D2939 */
+  --gray-900: hsl(220 43% 11%); /* #101828 */
+  --gray-950: hsl(222 41% 8%); /* #0C111D */
+  --gray-base: hsl(222 41% 8%); /* #0C111D */
+
+  /* Success Scale */
+  --success-25: hsl(138 76% 97%); /* #F6FEF9 */
+  --success-50: hsl(149 80% 90%); /* #ECFDF3 */
+  --success-100: hsl(151 84% 85%); /* #D1FADF */
+  --success-200: hsl(152 76% 80%); /* #A6F4C5 */
+  --success-300: hsl(153 74% 70%); /* #6CE9A6 */
+  --success-400: hsl(151 55% 62%); /* #32D583 */
+  --success-500: hsl(153 47% 49%); /* #12B76A */
+  --success-600: hsl(152 55% 41%); /* #039855 */
+  --success-700: hsl(153 59% 25%); /* #027A48 */
+  --success-800: hsl(155 64% 16%); /* #05603A */
+  --success-900: hsl(153 71% 8%); /* #054F31 */
+  --success-950: hsl(152 75% 5%); /* #053321 */
+
+  /* Warning Scale */
+  --warning-25: hsl(48 100% 96%); /* #FFFCF5 */
+  --warning-50: hsl(48 100% 92%); /* #FFFAEB */
+  --warning-100: hsl(48 96% 89%); /* #FEF0C7 */
+  --warning-200: hsl(38 93% 77%); /* #FEDF89 */
+  --warning-300: hsl(38 97% 65%); /* #FEC84B */
+  --warning-400: hsl(37 90% 55%); /* #FDB022 */
+  --warning-500: hsl(32 93% 48%); /* #F79009 */
+  --warning-600: hsl(29 80% 44%); /* #DC6803 */
+  --warning-700: hsl(26 71% 37%); /* #B54708 */
+  --warning-800: hsl(23 60% 29%); /* #93370D */
+  --warning-900: hsl(20 49% 22%); /* #7A2E0E */
+  --warning-950: hsl(17 39% 15%); /* #4E1D09 */
+
+  /* Error Scale */
+  --error-25: hsl(0 85% 97%); /* #FFFBFA */
+  --error-50: hsl(0 86% 97%); /* #FEF3F2 */
+  --error-100: hsl(359 100% 94%); /* #FEE4E2 */
+  --error-200: hsl(358 96% 90%); /* #FECDCA */
+  --error-300: hsl(357 89% 80%); /* #FDA29B */
+  --error-400: hsl(357 86% 70%); /* #F97066 */
+  --error-500: hsl(358 75% 59%); /* #F04438 */
+  --error-600: hsl(358 72% 48%); /* #D92D20 */
+  --error-700: hsl(357 70% 41%); /* #B42318 */
+  --error-800: hsl(357 69% 35%); /* #912018 */
+  --error-900: hsl(357 67% 29%); /* #7A271A */
+  --error-950: hsl(357 65% 23%); /* #55160C */
+
+  /* backgroundImage */
+
+  --trash-background: url('/assets/icons/trash-bg.svg');
 }
 
 .dark {
@@ -48,7 +126,7 @@
   --card-foreground: hsl(0 0% 98%);
   --popover: hsl(240 10% 3.9%);
   --popover-foreground: hsl(0 0% 98%);
-  --primary: hsl(0 0% 98%);
+  --primary: var(--primary);
   --primary-foreground: hsl(240 5.9% 10%);
   --secondary: hsl(240 3.7% 15.9%);
   --secondary-foreground: hsl(0 0% 98%);
@@ -84,7 +162,7 @@
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
+  --color-primary: var(--purple-600);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -92,7 +170,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
+  --color-destructive: var(--error-600);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
@@ -117,6 +195,8 @@
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
   --tw-shadow-color: var(--shadow);
+
+  --background-trash: var(--trash-background);
 
   @keyframes accordion-down {
     from {
