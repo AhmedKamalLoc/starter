@@ -37,4 +37,8 @@ export default [
       'sonarjs/no-duplicate-string': 'off',
     },
   },
+  {
+    // TODO: Remove that once you build the wrapper components
+    ignores: ['src/components/ui/**'],
+  },
 ];
