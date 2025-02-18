@@ -46,55 +46,52 @@ const buttonVariants = cva(
 );
 
 export type ButtonProps = {
-  asChild?: boolean;
   icon?: React.ReactNode;
   isLoading?: boolean;
   loadingText?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof buttonVariants>;
+  VariantProps<typeof buttonVariants> & {
+    // eslint-disable-next-line react/boolean-prop-naming
+    asChild?: boolean;
+  };
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      className,
-      variant,
-      size,
-      iconPosition,
-      asChild = false,
-      icon,
-      isLoading,
-      loadingText,
-      children,
-      disabled,
-      ...props
-    },
-    ref,
-  ) => {
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    const Comp = asChild ? Slot : 'button';
+function Button({
+  className,
+  variant,
+  size,
+  iconPosition,
+  icon,
+  isLoading,
+  loadingText,
+  children,
+  disabled,
+  asChild = false,
+  ...props
+}: ButtonProps) {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  const Comp = asChild ? Slot : 'button';
 
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, iconPosition, className }))}
-        ref={ref}
-        disabled={isLoading ?? disabled}
-        {...props}
-      >
-        {isLoading ? (
-          <>
-            <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
-            {loadingText ?? children}
-          </>
-        ) : (
-          <>
-            {icon ? <span aria-hidden="true">{icon}</span> : null}
-            {children}
-          </>
-        )}
-      </Comp>
-    );
-  },
-);
+  return (
+    <Comp
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, iconPosition, className }))}
+      disabled={isLoading ?? disabled}
+      {...props}
+    >
+      {isLoading ? (
+        <>
+          <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+          {loadingText ?? children}
+        </>
+      ) : (
+        <>
+          {icon ? <span aria-hidden="true">{icon}</span> : null}
+          {children}
+        </>
+      )}
+    </Comp>
+  );
+}
 
 Button.displayName = 'Button';
 

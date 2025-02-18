@@ -1,0 +1,47 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+import { Badge } from './badge';
+
+<Meta title="Components/Badge" component={Badge} />
+
+# Badge Component
+
+A small status descriptor for UI elements.
+
+## Usage
+
+```tsx
+import { Badge } from './badge';
+
+function Example() {
+  return <Badge variant="secondary">New Feature</Badge>;
+}
+```
+
+## Variants
+
+| Variant       | Description                   | Example                      |
+| ------------- | ----------------------------- | ---------------------------- |
+| `default`     | Default purple badge          | <Story name="Default" />     |
+| `secondary`   | Gray badge for secondary info | <Story name="Secondary" />   |
+| `destructive` | Red badge for errors/warnings | <Story name="Destructive" /> |
+| `outline`     | Outlined badge                | <Story name="Outline" />     |
+
+## Customization
+
+### Custom Classes
+
+Add Tailwind classes via `className` prop:
+
+<Story
+  name="CustomClass"
+  args={{ className: 'bg-green-500 text-white', children: 'Custom Badge' }}
+/>
+
+### Props
+
+| Prop        | Type      | Description            | Default     |
+| ----------- | --------- | ---------------------- | ----------- |
+| `variant`   | string    | Visual style variant   | `'default'` |
+| `className` | string    | Additional CSS classes | -           |
+| `children`  | ReactNode | Badge content          | -           |
