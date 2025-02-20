@@ -1,0 +1,116 @@
+# DataTable Component
+
+A powerful table component built with TanStack Table and Shadcn UI.
+
+## Features
+
+- Sorting (click column headers)
+- Pagination
+- Row selection
+- Global search
+- Faceted filtering
+- Customizable columns
+- Responsive design
+
+## Installation
+
+```tsx
+import { type ColumnDef } from '@tanstack/react-table';
+
+import { DataTable } from '@/components/data-table/data-table';
+```
+
+## Basic Usage
+
+```tsx
+tsx;
+interface Product {
+  id: string;
+  name: string;
+  price: number;
+}
+const columns: ColumnDef<Product>[] = [
+  {
+    accessorKey: 'name',
+    header: 'Name',
+  },
+  {
+    accessorKey: 'price',
+    header: 'Price',
+  },
+];
+const data: Product[] = [
+  { id: '1', name: 'Laptop', price: 999 },
+  { id: '2', name: 'Phone', price: 699 },
+];
+function Demo() {
+  return <DataTable columns={columns} data={data} searchKey="name" pageSize={10} />;
+}
+```
+
+## Props
+
+| Prop             | Type                 | Default  | Description                    |
+| ---------------- | -------------------- | -------- | ------------------------------ |
+| `columns`        | `ColumnDef<TData>[]` | Required | Array of column definitions    |
+| `data`           | `TData[]`            | Required | Table data                     |
+| `searchKey`      | `keyof TData`        | -        | Key for global search          |
+| `pageSize`       | `number`             | 10       | Items per page                 |
+| `facetedFilters` | `FacetedFilter[]`    | -        | Array of filter configurations |
+
+## Sorting
+
+```tsx
+const columns: ColumnDef<Product>[] = [
+  {
+    accessorKey: 'name',
+    header: 'Name',
+    enableSorting: true,
+  },
+  // ...
+];
+```
+
+## Row Selection
+
+```tsx
+function Demo() {
+  const [selectedRows, setSelectedRows] = useState<Product[]>([]);
+  return <DataTable columns={columns} data={data} onRowSelectionChange={setSelectedRows} />;
+}
+```
+
+## Custom Cells
+
+```tsx
+const columns: ColumnDef<Product>[] = [
+{
+accessorKey: 'price',
+header: 'Price',
+cell: ({ row }) => $${row.getValue('price')},
+},
+];
+
+```
+
+## Filtering
+
+```tsx
+<DataTable
+  // ...
+  facetedFilters={[
+    {
+      title: 'Category',
+      options: [
+        { label: 'Electronics', value: 'electronics' },
+        { label: 'Clothing', value: 'clothing' },
+      ],
+    },
+  ]}
+/>
+```
+
+## Requirements
+
+- Install TanStack Table: `npm install @tanstack/react-table`
+- Shadcn UI components configured
